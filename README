@@ -1,0 +1,6 @@
+#CREATION D'UNE API XMPP POUR UN PROJET
+
+Création d'un début d'API qui permet seulement pour le moment d'envoyer et recevoir des messages via
+un protocole XMPP
+
+(Utilisation de l'offline messages queue)
