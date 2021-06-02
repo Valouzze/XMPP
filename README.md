@@ -1,8 +1,8 @@
-#CREATION D'UNE API XMPP POUR UN PROJET
+# CREATION D'UNE API XMPP POUR UN PROJET
 
-L'API Suivante est basé sur XMPPPY et Ejabberd
+> L'API Suivante est basé sur XMPPPY et Ejabberd et est destinée à créer une API sur le protocole XMPP complète permettant une implémentation plus facile
 
-##Fonctionnalités
+## Fonctionnalités
 
 Désormais l'API est utilisable toujours pour les offline queue, mais aussi pour les MUC
 
