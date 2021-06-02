@@ -1,4 +1,4 @@
-from XMPP_API import XMPP_Client
+from XMPP_API import XMPP_Offline
 
-sender = XMPP_Client("admin", "localhost", "test")
-sender.send_message("Hello world ! :)", "test", "localhost")
+sender = XMPP_Offline("test", "valou", "test")
+sender.send_message("Hello world ! :)", "admin", "valou")

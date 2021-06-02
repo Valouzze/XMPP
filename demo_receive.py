@@ -1,4 +1,4 @@
-from XMPP_API import XMPP_Client
+from XMPP_API import XMPP_Offline
 
-receiver = XMPP_Client("test", "localhost", "test")
+receiver = XMPP_Offline("test", "localhost", "test")
 receiver.receive_message()
