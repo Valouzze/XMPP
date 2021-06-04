@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>XMPP_API module &mdash; Documentation XMPP_API </title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="XMPP" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> XMPP_API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">XMPP</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">XMPP_API module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">XMPP_API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">XMPP</a> &raquo;</li>
+        
+      <li>XMPP_API module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/XMPP_API.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-XMPP_API">
+<span id="xmpp-api-module"></span><h1>XMPP_API module<a class="headerlink" href="#module-XMPP_API" title="Lien permanent vers ce titre">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="XMPP_API.Ejabberd_Server">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">XMPP_API.</span></span><span class="sig-name descname"><span class="pre">Ejabberd_Server</span></span><a class="headerlink" href="#XMPP_API.Ejabberd_Server" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe contenant des fonctions utiles à un serveur ejabberd
+/! Il faut que l’utilisateur de ces fonctions aient accès à ejabberdctl autrement cela donnera juste lieu à un
+« Permission denied »</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.Ejabberd_Server.create_muc">
+<span class="sig-name descname"><span class="pre">create_muc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.Ejabberd_Server.create_muc" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Création d’un groupe de chat d’utilisateurs (MUC) en fournissant un nom pour ce canal d’utilisation, un service, et le domaine</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.Ejabberd_Server.delete_muc">
+<span class="sig-name descname"><span class="pre">delete_muc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.Ejabberd_Server.delete_muc" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Suppression d’un MUC en fournissant le nom du canal, et son service</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.Ejabberd_Server.list_of_user">
+<span class="sig-name descname"><span class="pre">list_of_user</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.Ejabberd_Server.list_of_user" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Affiche dans le terminal la liste de tout les utilisateurs d’un domaine</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.Ejabberd_Server.register_user">
+<span class="sig-name descname"><span class="pre">register_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.Ejabberd_Server.register_user" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Enregistre un utilisateur en fournissant un nom, son domaine, et son mot de passe</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.Ejabberd_Server.remove_user">
+<span class="sig-name descname"><span class="pre">remove_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.Ejabberd_Server.remove_user" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Supprime un utilisateur en fournissant son nom et son domaine</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_MUC">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">XMPP_API.</span></span><span class="sig-name descname"><span class="pre">XMPP_MUC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_MUC" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Définition d’un client XMPP ayant accès à un MUC</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_MUC.GoOn">
+<span class="sig-name descname"><span class="pre">GoOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_MUC.GoOn" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction annexe utilisée pour receive_muc</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_MUC.StepOn">
+<span class="sig-name descname"><span class="pre">StepOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_MUC.StepOn" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction annexe utilisée pour receive_muc</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_MUC.messageCB">
+<span class="sig-name descname"><span class="pre">messageCB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_MUC.messageCB" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction annexe utilisée pour receive_muc</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_MUC.receive_muc">
+<span class="sig-name descname"><span class="pre">receive_muc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">muc_room</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_MUC.receive_muc" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Cette fonction permet d’afficher tout l’historique de messages d’un groupe d’utilisateurs (MUC)
+Puis ensuite affiche un message « None » et laisse le client en mode écoute, ce qui lui permet de continuer
+à recevoir les messages qui pourraient être envoyé dans le MUC</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_MUC.send_muc">
+<span class="sig-name descname"><span class="pre">send_muc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muc_room</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_MUC.send_muc" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction permettant d’envoyer un message à un groupe d’utilisateurs (MUC)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_Offline">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">XMPP_API.</span></span><span class="sig-name descname"><span class="pre">XMPP_Offline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_Offline" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Définition d’un client XMPP avec file de message en offline</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_Offline.GoOn">
+<span class="sig-name descname"><span class="pre">GoOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_Offline.GoOn" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction annexe utilisée pour receive_message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_Offline.StepOn">
+<span class="sig-name descname"><span class="pre">StepOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_Offline.StepOn" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction annexe utilisée pour receive_message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_Offline.messageCB">
+<span class="sig-name descname"><span class="pre">messageCB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_Offline.messageCB" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction annexe utilisée pour receive_message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_Offline.receive_message">
+<span class="sig-name descname"><span class="pre">receive_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_Offline.receive_message" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction permettant de mettre en mode écoute le client XMPP pour ses messages privés hors ligne, en les affichants sur le terminal</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="XMPP_API.XMPP_Offline.send_message">
+<span class="sig-name descname"><span class="pre">send_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver_username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver_domain</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#XMPP_API.XMPP_Offline.send_message" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Envoie un message privé à l’utilisateur choisi et de son nom de domaine</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modules.html" class="btn btn-neutral float-left" title="XMPP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Valentin GANIEZ.
+
+    </p>
+  </div>
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
