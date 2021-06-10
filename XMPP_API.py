@@ -11,6 +11,7 @@ class XMPP_Offline:
         self.user = username
         self.domain = domain
         self.jid = username + '@' + domain
+        self.lastMessage = list()
 
     def send_message(self, msg, receiver_username, receiver_domain):
         '''
@@ -32,6 +33,7 @@ class XMPP_Offline:
             return -1
         else:
             receiver_jid = receiver_username + '@' + receiver_domain
+            print(self.jid)
             cl.send(xmpp.protocol.Message(receiver_jid,msg))
             cl.disconnect()
             return 1
@@ -46,7 +48,8 @@ class XMPP_Offline:
         '''
         print("Sender: " + str(msg.getFrom()))
         print("Content: " + str(msg.getBody()))
-        print(msg)
+        print('\n')
+        self.lastMessage.append([str(msg.getBody()), str(msg.getFrom()).rsplit('/', 1)[0] ])
 
 
     def StepOn(self,conn):
@@ -86,6 +89,18 @@ class XMPP_Offline:
         cl.sendInitPresence()
 
         self.GoOn(cl)
+    
+    def getLastMessage(self):
+        '''
+        Retourne le dernier message du client et le consumme
+        '''
+        length = len(self.lastMessage)
+        if length == 0 :
+            return None
+        else:
+            to_return = self.lastMessage[0]
+            self.lastMessage.pop(0)
+            return to_return
 
 class XMPP_MUC:
     "Définition d'un client XMPP ayant accès à un MUC"
