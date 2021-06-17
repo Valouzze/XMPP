@@ -63,7 +63,7 @@ class Camion:
             if random.randint(0, 100) <= 0:
                 self.envoie_evenement(4,5)
 
-c1 = Camion(6, 10, 20, 1 , 1, 10, "station", "valouzze.local", "test")
+c1 = Camion(9, 10, 20, 1 , 1, 10, "station", "valouzze.local", "test")
 c2 = Camion(2, 10, 15, 1 , 1, 10, "station", "valouzze.local", "test")
 c3 = Camion(1, 10, 18, 1 , 1, 10, "station", "valouzze.local", "test")
 c1.envoie_message()
