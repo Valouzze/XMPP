@@ -13,9 +13,10 @@ def sending():
         if consumme != None :
             sender = consumme[1]
             msg = consumme[0]
-            print("sender : " + str(sender) + " msg: " + str(msg))
-            client.send_message(msg, "web", "valouzze.local")
-            client.send_message(msg, "tampon", "valouzze.local")
+            if sender == "passerelle@valouzze.local":
+                print("sender : " + str(sender) + " msg: " + str(msg))
+                client.send_message(msg, "web", "valouzze.local")
+                client.send_message(msg, "tampon", "valouzze.local")
 
 receive = threading.Thread(target=client.receive_message)
 receive.start()

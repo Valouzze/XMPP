@@ -36,10 +36,11 @@ def gestion_web():
         if consumme != None :
             sender = consumme[1]
             msg = consumme[0]
-            print("sender : " + str(sender) + " msg: " + str(msg))
-            print('\n')
-            actualisation(json.loads(msg))
-            ecriture(message_recu)
+            if sender == "evt@valouzze.local":
+                print("sender : " + str(sender) + " msg: " + str(msg))
+                print('\n')
+                actualisation(json.loads(msg))
+                ecriture(message_recu)
 
 
 server = XMPP_Offline("web", "valouzze.local", "test")
