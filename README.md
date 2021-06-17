@@ -26,7 +26,7 @@ Pour ce qui est des autres serveurs XMPP qu'Ejabberd, il faudra par vous-même f
 ## Documentations
 
 Une documentation au sujet de l'API se trouve dans doc/_build/html
-Il suffit de télécharger ce qui s'y trouve et soit de le lancer dans un navigateur, soit d'héberger l'ensemble des fichiers sur un serveur apache
+Il suffit de télécharger ce qu'il s'y trouve et soit de le lancer dans un navigateur, soit d'héberger l'ensemble des fichiers sur un serveur apache
 
 ## Demo files
 
