@@ -7,9 +7,11 @@
 L'API possède plusieurs fonctionnalités :
 
 - XMPP Offline queue
+
 Permet d'envoyer et recevoir des messages en mode hors ligne
 
 - XMPP MUC (Multi User Channel)
+
 Permets également l'envoi et la réception de message sur un Multi User Channel, lors de la réception, on peut voir tous les anciens messages qui seront séparés d'un message "None" pour voir les messages reçus après démarrage du client de réception.
 Libre à vous par la suite d'ajouter un champ avec la date et l'heure dans votre message afin de pouvoir faire un historique plus clair.
 
