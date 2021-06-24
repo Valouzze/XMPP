@@ -26,11 +26,6 @@ class XMPP_Offline:
         if cl.auth(client.getNode(),self.passw) == None:
             print("Problème d'authentification")
             sys.exit(0)
-        #On vérifie pour envoyer un message que les deux sont dans le même domaine
-        if receiver_domain != self.domain:
-            print("Sender domain : " + self.domain + "\n Receiver domain : " + receiver_domain + '\n')
-            print("L'envoyeur et le receveur ne sont pas dans le même domaine")
-            return -1
         else:
             receiver_jid = receiver_username + '@' + receiver_domain
             print(self.jid)
@@ -109,6 +104,7 @@ class XMPP_MUC:
         self.user = username
         self.domain = domain
         self.jid = username + '@' + domain
+        self.lastMessage = list()
 
     def send_muc(self, message, muc_room):
         '''
@@ -138,8 +134,10 @@ class XMPP_MUC:
         '''
         if msg.getType() == "groupchat" and (msg.getBody != None):
                 print(str(msg.getFrom()) +": "+  str(msg.getBody()))
+                self.lastMessage.append([str(msg.getBody()), str(msg.getFrom()).rsplit('/', 1)[0] ])
         if msg.getType() == "chat":
                 print("private: " + str(msg.getFrom()) +  ":" +str(msg.getBody()))
+                self.lastMessage.append([str(msg.getBody()), str(msg.getFrom()).rsplit('/', 1)[0] ])
 
     def StepOn(self,conn):
         '''
@@ -173,9 +171,13 @@ class XMPP_MUC:
 
         cl = xmpp.Client(client.getDomain(), debug=[])
 
-        cl.connect()
+        if cl.connect() == "":
+                print("not connected")
+                sys.exit(0)
 
-        cl.auth(client.getNode(),self.passw)
+        if cl.auth(client.getNode(),self.passw) == None:
+                print("authentication failed")
+                sys.exit(0)
 
 
         cl.sendInitPresence()
